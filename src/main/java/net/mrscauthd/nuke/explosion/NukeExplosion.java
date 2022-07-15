@@ -12,6 +12,8 @@ import java.util.Optional;
 import java.util.Random;
 import java.util.Set;
 import javax.annotation.Nullable;
+
+import net.minecraft.Util;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
@@ -55,7 +57,7 @@ public class NukeExplosion extends Explosion {
     private  float radius;
     private  DamageSource damageSource;
     private  ExplosionDamageCalculator damageCalculator;
-    private final List<BlockPos> toBlow = Lists.newArrayList();
+    private final ObjectArrayList<BlockPos> toBlow = new ObjectArrayList<>();
     private final Map<Player, Vec3> hitPlayers = Maps.newHashMap();
     private  Vec3 position;
 
@@ -241,7 +243,7 @@ public class NukeExplosion extends Explosion {
 
         if (flag) {
             ObjectArrayList<Pair<ItemStack, BlockPos>> objectarraylist = new ObjectArrayList<>();
-            Collections.shuffle(this.toBlow, this.level.random);
+            Util.shuffle(this.toBlow, this.level.random);
 
             for(BlockPos blockpos : this.toBlow) {
                 BlockState blockstate = this.level.getBlockState(blockpos);

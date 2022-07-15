@@ -10,8 +10,7 @@ import net.mrscauthd.nuke.entities.renderer.NukeRenderer;
 public class ClientEventBusSubscriber {
     @SubscribeEvent
     public static void onClientSetup(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(ModInnet.NUKE.get(), NukeRenderer::new);
-
+        event.registerEntityRenderer(ModRegistry.NUKE.get(), NukeRenderer::new);
     }
 }
 
