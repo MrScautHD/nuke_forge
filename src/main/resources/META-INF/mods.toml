@@ -11,14 +11,14 @@ logoFile="logo.png"
 authors="MrScautHD"
 description='''This Mod add a Nuke to the Game'''
 
-[[dependencies.beyond_earth]]
+[[dependencies.nuke]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.19]"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.beyond_earth]]
+[[dependencies.nuke]]
     modId="forge"
     mandatory=true
     versionRange="[41.0.98,]"
